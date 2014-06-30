@@ -11,6 +11,8 @@ t = Twitter(auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET,
 
 def getStatuses(username):
 	statuses = t.GetUserTimeline(username)
-	return [s.text for s in statuses]
+	texts = [s.text for s in statuses]
+        combinedText = texts.join("")
+        return combinedText
 
 get_sentiment(getStatuses(username='mumbaikara'))
