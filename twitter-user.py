@@ -15,6 +15,4 @@ def getStatuses(username):
 	statuses = t.GetUserTimeline(username)
 	texts = [s.text for s in statuses]
         combinedText = "".join(texts)
-        return combinedText
-
-print sentiment_analysis.get_sentiment(getStatuses(username='mumbaikara'))
+        return sentiment_analysis.get_sentiment(combinedText)
